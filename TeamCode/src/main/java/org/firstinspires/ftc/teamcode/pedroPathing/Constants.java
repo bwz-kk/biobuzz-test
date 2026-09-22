@@ -16,17 +16,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-/**
- * Pedro Pathing 3.0 constants. The values below are placeholders: run the AutoTune procedures in
- * {@link Tuning} (see https://pedropathing.com/docs/pathing/tuning) and paste the generated configs here.
- * If you use a different drivetrain or localizer, swap the config classes and {@link #createFollower} to match.
- */
+
 public class Constants {
     public static MecanumConfig drivetrainConfig = new MecanumConfig(c -> {
-        c.frontLeftName.set("lf");
-        c.backLeftName.set("lr");
-        c.frontRightName.set("rf");
-        c.backRightName.set("rr");
+        c.frontLeftName.set("LF");
+        c.backLeftName.set("LR");
+        c.frontRightName.set("RF");
+        c.backRightName.set("RR");
 
         c.frontLeftDirection.set(DcMotorSimple.Direction.REVERSE);
         c.backLeftDirection.set(DcMotorSimple.Direction.REVERSE);
@@ -49,9 +45,6 @@ public class Constants {
     });
 
     public static ForesightConfig foresightConfig = new ForesightConfig(c -> {
-        // The end constraints (timeoutConstraint etc.) that decide when FollowPathCommand and HoldPointCommand finish
-        // also go here, see https://pedropathing.com/docs/pathing/reference/endconstraints
-
         Controller primaryTranslationalForward = Controller.proportional(0.3);
         Controller secondaryTranslationalForward = Controller.proportional(0.1);
         Controller primaryTranslationalLateral = Controller.proportional(0.3);
